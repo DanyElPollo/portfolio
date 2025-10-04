@@ -1,10 +1,12 @@
 FROM node:24-alpine
 
-RUN apk update && apk add --no-cache neovim bash git curl npm
+RUN apk update && apk add --no-cache git neovim
 
 WORKDIR /usr/src/app
 
 COPY . .
+
+RUN npm cache clean --force
 
 RUN npm install
 

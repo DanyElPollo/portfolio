@@ -8,6 +8,8 @@ services:
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
+    # comands: 
+    #   - "apk add npm"
     ports:
       - "5173:5173"
     dns:
