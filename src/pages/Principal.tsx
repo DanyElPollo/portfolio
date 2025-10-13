@@ -1,18 +1,18 @@
-import Header from "@components/Header";
 import Section from "@components/section/Section";
 import profile_photo from '@assets/profile_photo.png'
 import SocialLinks from "@components/social/SocialLinks";
 import { useEffect } from "react";
+import Href from "@components/href/Href";
+import ProyectLayout from "./ProyectLayout";
 
 interface PrincipalProps {
-  sections: string[];
-  sect: string;
+  sect?: string;
 }
 
-export default function Principal({ sect, sections }: PrincipalProps) {
+export default function Principal({ sect }: PrincipalProps) {
 
   useEffect(() => {
-    const element = document.getElementById(sect);
+    const element = sect ? document.getElementById(sect) : "";
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -20,7 +20,6 @@ export default function Principal({ sect, sections }: PrincipalProps) {
 
   return (
     <>
-      <Header className="bg-transparent fixed" sections={sections} />
       <main className='flex flex-col gap-20 py-10 min-h-screen md:w-4xl mx-auto'>
         <Section id="inicio" className='text-white items-center justify-center' >
           <div className="container mx-auto flex flex-col md:flex-row gap-10 justify-center ">
@@ -47,18 +46,13 @@ export default function Principal({ sect, sections }: PrincipalProps) {
             </div>
           </div>
         </Section>
-        <Section id="proyectos" className='text-white items-center justify-center' >
-          <div className='w-auto mx-auto px-4'>
-            <h2 className='text-5xl font-bold mb-4'>Sobre mí</h2>
+        <Section id="proyectos" className='text-white items-center justify-center ' >
+          <div className='w-auto mx-auto px-4 flex flex-col gap-4 '>
+            <h2 className='text-5xl font-bold mb-4'>Proyectos</h2>
             <div className=" ">
-              <p className="text-justify"> Profesional en Ingeniería de Sistemas con sólidos conocimientos en desarrollo de software, programación,
-                administración de bases de datos, computación en la nube y metodologías ágiles. Experiencia en
-                mantenimiento de equipos de cómputo y en proyectos académicos e independientes que integran lenguajes
-                como Python, JavaScript y PHP, además de contar con conocimientos en herramientas CMS como
-                wordpress. Destaco por mi capacidad de aprendizaje autónomo, pensamiento analítico y orientación a
-                resultados, así como por mi disposición para el trabajo en equipo y la resolución de problemas
-                tecnológicos.</p>
+              <p className="text-justify">He desarrollados varios proyectos en los cuales se pone a prueba el ingenio y la resolucion de problemas ademas de mi forma instintiva de modularizar, comparto con ustedes una descripcion y enlaces directos a mi repositorio en <Href href="https://github.com/DanyElPollo?tab=repositories" _target="_blank" className="p-0 m-0 text-sky-300 hover:text-white hover:underline">GitHub.co</Href></p>
             </div>
+            <div className="border-l-2 pl-4"><ProyectLayout /></div>
           </div>
         </Section>
         {/* 

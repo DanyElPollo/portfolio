@@ -1,9 +1,16 @@
 import Navbar from "./navbar/Navbar";
 
-export default function Header({ className, sections }: { className?: string, sections?: string[] }) {
+type Props = {
+  className?: string;
+  sections?: string[]
+  handleSection?: (value: string) => void
+  active?: string
+}
+
+export default function Header({ className, sections, active, handleSection }: Props) {
   return (
     <header className={`p-4 min-w-full ${className}`}>
-      <Navbar links={sections} />
+      <Navbar links={sections} onSelect={handleSection} active={active} />
     </header>
   )
 }

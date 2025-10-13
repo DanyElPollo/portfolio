@@ -25,7 +25,14 @@
       ],
       "@styles/*": [
         "src/styles/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
       ]
+      
     },
   }
 }

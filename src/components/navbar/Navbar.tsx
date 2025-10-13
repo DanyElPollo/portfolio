@@ -1,12 +1,11 @@
 import Href from "@components/href/Href";
-import type React from "react";
 
 
 const capitalize = (link: string): string => {
   return link.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 }
 
-export default function Navbar({ links }: { links?: string[] }) {
+export default function Navbar({ links, active, onSelect }: { links?: string[], active?: string, onSelect?: (value: string) => void }) {
 
   let navLinks = links;
 
@@ -20,7 +19,7 @@ export default function Navbar({ links }: { links?: string[] }) {
         {
           navLinks.map((link) => (
             <li key={link}>
-              <Href href={`#${link}`}>
+              <Href href={`#${link}`} onClick={onSelect} className={active === link ? "text-sky-500 font-bold" : ""}>
                 {
                   capitalize(link)
                 }

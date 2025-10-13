@@ -1,6 +1,8 @@
 @import "tailwindcss";
-
-html, body {
+/* @import "tailwindcss/preflight"; /* reemplaza @tailwind base */
+/* @import "tailwindcss/utilities"; reemplaza @tailwind components + utilities */
+*/ html,
+body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }

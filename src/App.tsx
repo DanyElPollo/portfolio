@@ -1,4 +1,5 @@
 import BtnIcons from '@components/btn/BtnIcons'
+import Header from '@components/Header';
 import Principal from '@pages/Principal';
 import { useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
@@ -11,8 +12,12 @@ function App() {
   const handleClick = () => {
     const currentIndex = sections.indexOf(sect);
     const nextIndex = (currentIndex + 1) % sections.length;
-    setSect(sections[nextIndex]);
-    console.log(sect)
+    handleSelect(sections[nextIndex]);
+  };
+
+  const handleSelect = (value: string) => {
+    setSect(value);
+    document.getElementById(value)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -25,7 +30,9 @@ function App() {
         />
       </div>
 
-      <Principal sections={sections} sect={sect} />
+      <Header className="bg-transparent fixed" sections={sections} handleSection={handleSelect} active={sect} />
+
+      <Principal sect={sect} />
     </div>
   );
 }
