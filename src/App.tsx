@@ -1,10 +1,11 @@
 import BtnIcons from '@components/btn/BtnIcons'
 import Header from '@components/Header';
+import Puntero from '@components/pointer/Puntero';
 import Principal from '@pages/Principal';
 import { useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 
-const sections: string[] = ["inicio", "sobre_mi", "proyectos"];
+const sections: string[] = ["inicio", "sobre_mi", "skills", "proyectos"];
 
 function App() {
   const [sect, setSect] = useState(sections[0]);
@@ -22,6 +23,8 @@ function App() {
 
   return (
     <div className="scroll-smooth">
+      <Puntero />
+
       <div className='container fixed mx-auto bottom-0 min-w-full flex justify-center pb-4'>
         <BtnIcons
           icon={<FaAngleDown />}
@@ -30,8 +33,7 @@ function App() {
         />
       </div>
 
-      <Header className="bg-transparent fixed" sections={sections} handleSection={handleSelect} active={sect} />
-
+      <Header className="bg-transparent fixed z-10" sections={sections} handleSection={handleSelect} active={sect} />
       <Principal sect={sect} />
     </div>
   );

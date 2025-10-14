@@ -3,17 +3,19 @@ import type { ReactElement } from "react"
 type CardBaseProps = {
   title: string,
   id: number,
-  children?: ReactElement
+  children?: ReactElement,
+  description?: string | null,
+  className?: string
 }
 
-const CardBase = ({ title, id, children }: CardBaseProps) => {
+const CardBase = ({ title, id, description, children, className }: CardBaseProps) => {
+
+  const base = className ?? "flex flex-col  min-w-60 w-64 max-w-72 h-56 mx-auto p-4 border-2 border-emerald-300 rounded-2xl transition-transform hover:scale-110 justify-between"
 
   return (
-    <div className="flex flex-col min-w-36 mx-auto p-4 border-2 border-emerald-300 rounded-2xl transition-transform hover:scale-110 justify-between" key={id}>
-      <span className="text-2xl justify-center my-2.5">{title}</span>
-
-      <p className="font-semibold line-clamp-2 my-1.5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit amet vero doloribus iste cupiditate tenetur, quasi enim at earum nostrum praesentium assumenda eveniet deserunt unde fuga voluptatum excepturi possimus quam?
-        Nemo in incidunt ad saepe quaerat voluptatibus nisi quasi velit dolorum eum. Delectus soluta repellendus commodi deserunt molestias odio, pariatur, praesentium quasi tempore laborum a distinctio eius quos aut ab?</p>
+    <div key={id} className={base}>
+      <span className="text-2xl justify-center my-2.5 ">{title}</span>
+      {description && <p className="font-semibold line-clamp-2 my-1.5">{description}</p>}
       {children}
     </div>
   )

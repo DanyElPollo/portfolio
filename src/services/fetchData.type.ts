@@ -5,5 +5,5 @@ export interface InterfaceFetchGithubProps {
   html_url: string;
   description: string | null;
   language: string | null;
-  fork: boolean
+  fork: boolean,
 }

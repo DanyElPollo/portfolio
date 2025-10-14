@@ -4,6 +4,7 @@ import SocialLinks from "@components/social/SocialLinks";
 import { useEffect } from "react";
 import Href from "@components/href/Href";
 import ProyectLayout from "./ProyectLayout";
+import SkillsIcon from "@components/icons/SkillsIcon";
 
 interface PrincipalProps {
   sect?: string;
@@ -44,15 +45,19 @@ export default function Principal({ sect }: PrincipalProps) {
                 resultados, así como por mi disposición para el trabajo en equipo y la resolución de problemas
                 tecnológicos.</p>
             </div>
+            <SkillsIcon className="hover:scale-125 size-8 m-1.5" />
           </div>
         </Section>
-        <Section id="proyectos" className='text-white items-center justify-center ' >
+        <div className="border-2 border-gray-500 mx-3 select-none" />
+        <Section id="proyectos" className='text-white items-center justify-center' >
           <div className='w-auto mx-auto px-4 flex flex-col gap-4 '>
             <h2 className='text-5xl font-bold mb-4'>Proyectos</h2>
             <div className=" ">
               <p className="text-justify">He desarrollados varios proyectos en los cuales se pone a prueba el ingenio y la resolucion de problemas ademas de mi forma instintiva de modularizar, comparto con ustedes una descripcion y enlaces directos a mi repositorio en <Href href="https://github.com/DanyElPollo?tab=repositories" _target="_blank" className="p-0 m-0 text-sky-300 hover:text-white hover:underline">GitHub.co</Href></p>
             </div>
-            <div className="border-l-2 pl-4"><ProyectLayout /></div>
+            <div className="border-l-2 pl-4">
+              <ProyectLayout />
+            </div>
           </div>
         </Section>
         {/* 

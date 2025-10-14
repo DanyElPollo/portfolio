@@ -12,6 +12,7 @@ const fetchDataGitHub = async (username: string): Promise<InterfaceFetchGithubPr
     }
 
     const data = await response.json();
+    console.log(data)
     return data.filter((repo: InterfaceFetchGithubProps) => !repo.fork).map((repo: InterfaceFetchGithubProps) => (
       {
         id: repo.id,
