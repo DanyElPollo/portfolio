@@ -1,23 +1,17 @@
 import Section from "@components/section/Section";
 import profile_photo from '@assets/profile_photo.png'
 import SocialLinks from "@components/social/SocialLinks";
-import { useEffect } from "react";
 import Href from "@components/href/Href";
-import ProyectLayout from "./ProyectLayout";
 import SkillsIcon from "@components/icons/SkillsIcon";
+import { useTranslation } from "react-i18next";
+import SectionProjects from "./SectionProjects";
 
 interface PrincipalProps {
   sect?: string;
 }
 
 export default function Principal({ sect }: PrincipalProps) {
-
-  useEffect(() => {
-    const element = sect ? document.getElementById(sect) : "";
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [sect])
+  const { t } = useTranslation('profile')
 
   return (
     <>
@@ -27,7 +21,7 @@ export default function Principal({ sect }: PrincipalProps) {
             <img src={profile_photo} alt="Foto de perfil" className="h-1/2 max-w-72 w-52 md:w-60 lg:w-68 md:h-1/2 rounded-4xl object-cover border-2 border-gray-300 shadow-lg transition duration-300 hover:scale-105" />
             <div className="flex flex-col items-center justify-center text-center gap-3">
               <h1 className="text-3xl md:text-4xl ">Daniel Andres Arenas Morales</h1>
-              <p className="">Ingeniero de Sistemas | Desarrollador Full Stack</p>
+              <p className="">{t('profession')} | {t('area')}</p>
               <SocialLinks />
             </div>
 
@@ -35,15 +29,9 @@ export default function Principal({ sect }: PrincipalProps) {
         </Section>
         <Section id="sobre_mi" className='text-white pt-20'>
           <div className='w-auto mx-auto px-4 flex flex-col gap-4 '>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4'>Sobre mí</h2>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4'>{t('aboutme')}</h2>
             <div className=" ">
-              <p className="text-justify"> Profesional en Ingeniería de Sistemas con sólidos conocimientos en desarrollo de software, programación,
-                administración de bases de datos, computación en la nube y metodologías ágiles. Experiencia en
-                mantenimiento de equipos de cómputo y en proyectos académicos e independientes que integran lenguajes
-                como Python, JavaScript y PHP, además de contar con conocimientos en herramientas CMS como
-                wordpress. Destaco por mi capacidad de aprendizaje autónomo, pensamiento analítico y orientación a
-                resultados, así como por mi disposición para el trabajo en equipo y la resolución de problemas
-                tecnológicos.</p>
+              <p className="text-justify">{t('aboutme_text')}</p>
             </div>
             <SkillsIcon className="hover:scale-125 md:size-8 m-1.5" />
           </div>
@@ -51,18 +39,20 @@ export default function Principal({ sect }: PrincipalProps) {
         <div className="border-2 border-gray-500 mx-3 select-none" />
         <Section id="proyectos" className='text-white items-center justify-center pt-20' >
           <div className='w-auto mx-auto px-4 flex flex-col gap-4 '>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4'>Proyectos</h2>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4'>{t('projects')}</h2>
             <div className=" ">
-              <p className="text-justify">He desarrollados varios proyectos en los cuales se pone a prueba el ingenio y la resolucion de problemas ademas de mi forma instintiva de modularizar, comparto con ustedes una descripcion y enlaces directos a mi repositorio en <Href href="https://github.com/DanyElPollo?tab=repositories" _target="_blank" className="p-0 m-0 text-sky-300 hover:text-white hover:underline">GitHub.co</Href></p>
+              <p className="text-justify">{t('projects_text')} <Href href="https://github.com/DanyElPollo?tab=repositories" _target="_blank" className="p-0 m-0 text-sky-300 hover:text-white hover:underline">GitHub.co</Href></p>
             </div>
+            {/* proyectos */}
             <div className="md:border-l-2 md:pl-4">
-              <ProyectLayout />
+              <SectionProjects />
             </div>
+            {/*  */}
           </div>
         </Section>
       </main >
       <footer className="flex w-full bg-gray-400 justify-center py-3 select-none">
-        <span className="text-white">Diseñado y Desarrollado por Daniel Arenas Morales&copy;</span>
+        <span className="text-white">{t('footer')}&copy;</span>
       </footer>
     </>
   )

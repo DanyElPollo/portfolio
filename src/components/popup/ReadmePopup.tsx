@@ -1,6 +1,6 @@
 import useFetchData from "@hooks/useFetchData";
 import { fetchRepoReadme } from "@services/fetchRepoReadme";
-import Markdown from "react-markdown";
+// import Markdown from "react-markdown";
 
 interface Props {
   repoUrl: string;
@@ -19,7 +19,7 @@ const ReadmePopup = ({ repoUrl, onClose }: Props) => {
         {error && <p className="text-red-500">{error}</p>}
         {resState ? (
           <div className="prose prose-sm sm:prose lg:prose-lg max-w-none">
-            <Markdown>{resState}</Markdown>
+            {/* <Markdown>{resState}</Markdown> */}
           </div>
         ) : (
           <p>Cargando README...</p>
