@@ -49,7 +49,7 @@ export default function Principal({ sect }: PrincipalProps) {
           </div>
         </Section>
         <div className="border-2 border-gray-500 mx-3 select-none" />
-        <Section id="proyectos" className='text-white items-center justify-center' >
+        <Section id="proyectos" className='text-white items-center justify-center pt-20' >
           <div className='w-auto mx-auto px-4 flex flex-col gap-4 '>
             <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4'>Proyectos</h2>
             <div className=" ">
