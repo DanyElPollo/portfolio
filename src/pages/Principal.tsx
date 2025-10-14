@@ -21,11 +21,11 @@ export default function Principal({ sect }: PrincipalProps) {
 
   return (
     <>
-      <main className='flex flex-col gap-20 py-10 min-h-screen  w-9/12 lg:w-4xl mx-auto'>
+      <main className='flex flex-col gap-20 py-10 min-h-screen  w-11/12 lg:w-4xl mx-auto'>
         <Section id="inicio" className='text-white items-center justify-center' >
-          <div className="container mx-auto flex flex-col md:flex-row gap-10 justify-center items-center">
-            <img src={profile_photo} alt="Foto de perfil" className="h-1/2 w-72 md:w-80 md:h-1/2 rounded-4xl object-cover border-2 border-gray-300 shadow-lg transition duration-300 hover:scale-105" />
-            <div className="max-w-lg gap-5 flex flex-col md:flex-row font-sans justify-center items-center text-center">
+          <div className="container mx-auto flex flex-col md:flex-row gap-5 justify-center items-center">
+            <img src={profile_photo} alt="Foto de perfil" className="h-1/2 max-w-72 w-52 md:w-60 lg:w-68 md:h-1/2 rounded-4xl object-cover border-2 border-gray-300 shadow-lg transition duration-300 hover:scale-105" />
+            <div className="flex flex-col items-center justify-center text-center gap-3">
               <h1 className="text-3xl md:text-4xl ">Daniel Andres Arenas Morales</h1>
               <p className="">Ingeniero de Sistemas | Desarrollador Full Stack</p>
               <SocialLinks />
@@ -60,19 +60,9 @@ export default function Principal({ sect }: PrincipalProps) {
             </div>
           </div>
         </Section>
-        {/* 
-        <section id="proyectos" className='select-none'>
-          <h2>Proyectos</h2>
-        </section>
-        <section id="skills" className='select-none'>
-          <h2>Skills</h2>
-        </section>
-        <section id="knowledge" className='select-none'>
-          <h2>Conocimientos</h2>
-        </section> */}
       </main >
-      <footer>
-        {/* contenido del footer */}
+      <footer className="flex w-full bg-gray-400 justify-center py-3 select-none">
+        <span className="text-white">Diseñado y Desarrollado por Daniel Arenas Morales&copy;</span>
       </footer>
     </>
   )
