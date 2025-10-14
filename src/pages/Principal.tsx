@@ -6,11 +6,7 @@ import SkillsIcon from "@components/icons/SkillsIcon";
 import { useTranslation } from "react-i18next";
 import SectionProjects from "./SectionProjects";
 
-interface PrincipalProps {
-  sect?: string;
-}
-
-export default function Principal({ sect }: PrincipalProps) {
+export default function Principal() {
   const { t } = useTranslation('profile')
 
   return (

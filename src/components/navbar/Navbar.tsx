@@ -1,6 +1,4 @@
-import BtnIcons from "@components/btn/BtnIcons";
 import Href from "@components/href/Href";
-import { HiOutlineTranslate } from "react-icons/hi";
 
 type Section = {
   id: string;
