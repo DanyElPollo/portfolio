@@ -22,11 +22,11 @@ import {
 export default function SkillsIcon({ className }: { className: string }) {
   const base = `text-3xl transition ${className}`;
 
-  const styleCard = "flex flex-col text-center min-w-60 w-72 max-w-72 h-56 mx-auto p-4 border-2 border-gray-300 bg-sky-900 rounded-2xl transition-transform hover:scale-110 justify-around"
+  const styleCard = "flex flex-col text-center min-w-60 md:w-72 max-w-72 h-56 mx-auto p-4 border-2 border-gray-300 bg-sky-900 rounded-2xl transition-transform hover:scale-110 justify-around"
 
 
   return (
-    <div className="grid grid-cols-2 gap-5 mt-5 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5 md:p-4">
       {/* Lenguajes */}
       <CardBase title='Lenguajes' id={1} className={styleCard}>
         <div className="flex flex-wrap justify-center gap-4">

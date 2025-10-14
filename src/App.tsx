@@ -5,7 +5,7 @@ import Principal from '@pages/Principal';
 import { useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 
-const sections: string[] = ["inicio", "sobre_mi", "skills", "proyectos"];
+const sections: string[] = ["inicio", "sobre_mi", "proyectos"];
 
 function App() {
   const [sect, setSect] = useState(sections[0]);
@@ -33,7 +33,7 @@ function App() {
         />
       </div>
 
-      <Header className="bg-transparent fixed z-10" sections={sections} handleSection={handleSelect} active={sect} />
+      <Header className="bg-transparent fixed z-10 hidden md:flex" sections={sections} handleSection={handleSelect} active={sect} />
       <Principal sect={sect} />
     </div>
   );
