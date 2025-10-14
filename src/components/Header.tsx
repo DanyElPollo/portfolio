@@ -50,7 +50,6 @@ const Translation = () => {
     const nextLang = lang === "es" ? "en" : "es";
     i18n.changeLanguage(nextLang);
     setLang(nextLang);
-    console.log(lang)
   };
 
   return (

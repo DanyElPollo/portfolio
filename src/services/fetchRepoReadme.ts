@@ -18,7 +18,6 @@ export const fetchRepoReadme = async (owner: string, repo: string): Promise<stri
       Uint8Array.from(atob(data.content), c => c.charCodeAt(0))
     );
 
-    // console.log(decoded)
     return decoded;
   } catch (error) {
     console.error("Error en fetchRepoReadme:", error);
