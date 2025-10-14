@@ -4,11 +4,19 @@ import { useCallback, useState } from "react";
 const Puntero = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const myEvent = useCallback((e: MouseEvent) => {
+  const move = useCallback((e: MouseEvent) => {
     setPosition({ x: e.clientX, y: e.clientY });
   }, [])
 
-  useWindowListener<MouseEvent>('pointermove', myEvent);
+  const leave = useCallback((e: MouseEvent) => {
+    if (!e.relatedTarget || !(e.relatedTarget as HTMLElement).ownerDocument.contains(e.relatedTarget as Node)) {
+      setPosition({ x: -100, y: -100 });
+    }
+  }, []);
+
+  useWindowListener<MouseEvent>('pointermove', move);
+
+  useWindowListener<MouseEvent>('mouseout', leave);
 
   return (
     <div className="hidden select-none md:flex z-10" style={{

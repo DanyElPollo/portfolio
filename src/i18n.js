@@ -9,17 +9,16 @@ import navbarEs from "./language/es/navbar.json";
 import skillsEn from "./language/en/skills.json";
 import skillsEs from "./language/es/skills.json";
 
-
 const resources = {
   en: {
     profile: profileEn,
     nav: navbarEn,
-    skills: skillsEn
+    skills: skillsEn,
   },
   es: {
     profile: profileEs,
     nav: navbarEs,
-    skills: skillsEs
+    skills: skillsEs,
   },
 };
 
