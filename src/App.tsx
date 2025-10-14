@@ -28,7 +28,7 @@ function App() {
       <div className='container fixed mx-auto bottom-0 min-w-full flex justify-center pb-4'>
         <BtnIcons
           icon={<FaAngleDown />}
-          className='transition duration-250 ease-in-out hover:scale-130 bg-white hover:bg-sky-300'
+          className='hidden md:flex transition duration-250 ease-in-out hover:scale-130 bg-white hover:bg-sky-300'
           onClick={handleClick}
         />
       </div>

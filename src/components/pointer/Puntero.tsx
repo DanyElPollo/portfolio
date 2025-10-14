@@ -11,7 +11,7 @@ const Puntero = () => {
   useWindowListener<MouseEvent>('pointermove', myEvent);
 
   return (
-    <div className="select-none" style={{
+    <div className="hidden md:flex select-none" style={{
       position: 'fixed',
       backgroundColor: 'pink',
       borderRadius: '50%',
