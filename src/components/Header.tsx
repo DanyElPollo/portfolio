@@ -10,6 +10,16 @@ type Props = {
   active?: string
 }
 
+/**
+ * The `Header` function in TypeScript React renders a header component with navigation links that
+ * scroll to corresponding sections on the page.
+ * @param {Props}  - The `Header` component is a functional component that displays a header section
+ * with a navigation bar, a language translation selector, and a button for scrolling down the page.
+ * @returns The `Header` component is returning a JSX structure that includes a header element with a
+ * class name passed as a prop, a `Navbar` component with links from the `sections` array and an active
+ * section based on the `sect` state, a `Translation` component, and a `BtnDown` component with an
+ * `onClick` event handler `handleClick`.
+ */
 export default function Header({ className }: Props) {
   const { t } = useTranslation("nav");
 
@@ -42,6 +52,8 @@ export default function Header({ className }: Props) {
   )
 }
 
+/* The `Translation` function in the provided code is a React functional component responsible for
+handling language translation functionality. Here's a breakdown of what it does: */
 const Translation = () => {
   const { i18n } = useTranslation("profile");
   const [lang, setLang] = useState(i18n.language || "es");
@@ -59,6 +71,17 @@ const Translation = () => {
   )
 }
 
+/**
+ * The `BtnDown` function is a React component that renders a button with a down arrow icon and
+ * triggers a specified onClick function when clicked.
+ * @param  - The `BtnDown` component is a functional component that renders a button with a down arrow
+ * icon (`FaAngleDown`) inside it. The component takes a single prop `onClick`, which is a function
+ * that will be called when the button is clicked.
+ * @returns A functional component named `BtnDown` is being returned. It renders a `<div>` element with
+ * a specific class name and positioning. Inside this `<div>`, there is a `BtnIcons` component with
+ * specific styling and an `onClick` event handler that triggers the function passed as a prop. The
+ * `BtnIcons` component contains an icon from the `react-icons` library, specifically the `
+ */
 const BtnDown = ({ onClick }: { onClick: () => void }) => {
   return (
     <div className='fixed bottom-7 right-2 sm:right-1 lg:right-5 z-50'>
