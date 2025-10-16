@@ -1,8 +1,12 @@
-import Header from '@components/Header';
+import Footer from '@components/Layouts/Footer';
+import Header from '@components/Layouts/Header';
+import Main from '@components/Layouts/Main';
 import Puntero from '@components/pointer/Puntero';
-import Principal from '@pages/Principal';
+import { useTranslation } from 'react-i18next';
 
 const App = () => {
+  const { t } = useTranslation('profile')
+
 
   return (
     <div className="scroll-smooth">
@@ -13,7 +17,9 @@ const App = () => {
         className="bg-transparent fixed z-10 hidden md:flex"
       />
 
-      <Principal />
+      <Main translate={t} />
+
+      <Footer translate={t} ></Footer>
     </div>
   );
 };

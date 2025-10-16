@@ -1,9 +1,9 @@
 import { HiOutlineTranslate } from "react-icons/hi";
 import Navbar from "./navbar/Navbar";
-import BtnIcons from "./btn/BtnIcons";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
+import BtnIcons from "@components/btn/BtnIcons";
 
 type Props = {
   className?: string
