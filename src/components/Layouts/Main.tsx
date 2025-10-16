@@ -9,7 +9,7 @@ import DivFlex from "./wrapper/DivFlex";
 const Main = ({ translate }: { translate: (value: string) => string }) => {
 
   return (
-    <main className='flex flex-col gap-20 py-10 min-h-screen w-10/12 mx-auto'>
+    <main className='flex flex-col gap-20 py-10 min-h-screen w-9/12 mx-auto'>
       <Section id="inicio" className='text-white items-center justify-center' >
         <div className="container mx-auto flex flex-col md:flex-row gap-5 justify-center items-center">
           <img src={profile_photo} alt="Foto de perfil" className="h-1/2 max-w-72 w-52 md:w-60 lg:w-68 md:h-1/2 rounded-4xl object-cover border-2 border-gray-300 shadow-lg transition duration-300 hover:scale-105" />

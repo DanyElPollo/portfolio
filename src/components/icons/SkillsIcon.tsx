@@ -29,7 +29,7 @@ const SkillsIcon = ({ className }: { className: string }) => {
 
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 gap-5 justify-around mt-5 md:p-4 lg:px-56  ">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-around mt-5 md:py-4 xl:px-24 2xl:px-48  ">
       {/* Lenguajes */}
       <CardBase title={t('language')} id={1} className={styleCard}>
         <DivWrapper>

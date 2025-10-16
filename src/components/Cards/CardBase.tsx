@@ -11,7 +11,7 @@ type CardBaseProps = {
 
 const CardBase = ({ title, id, description, children, className }: CardBaseProps) => {
 
-  const base = className ?? "flex flex-col  min-w-60 w-64 max-w-72 h-56 mx-auto p-4 border-2 border-emerald-300 rounded-2xl transition-transform hover:scale-110 justify-between"
+  const base = className ?? "flex flex-col min-w-48 w-64 lg:w-56 max-w-72 h-56 mx-auto p-4 border-2 border-emerald-300 rounded-2xl transition-transform hover:scale-110 justify-between"
 
   return (
     <DivWrapper key={id} className={base}>
