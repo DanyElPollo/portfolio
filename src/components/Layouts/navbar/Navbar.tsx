@@ -1,4 +1,5 @@
 import Href from "@components/href/Href";
+import { useEffect } from "react";
 
 type Section = {
   id: string;
@@ -8,13 +9,14 @@ type Section = {
 type NavbarProps = {
   links?: Section[],
   active?: string,
+  onSelect: (value: string) => void
 }
 
 const capitalize = (link: string): string => {
   return link.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 }
 
-export default function Navbar({ links, active }: NavbarProps) {
+export default function Navbar({ links, active, onSelect }: NavbarProps) {
 
   let navLinks = links;
 
@@ -31,7 +33,7 @@ export default function Navbar({ links, active }: NavbarProps) {
       <ul className="w-auto sm:w-automd:w-[300px] md:w-[500px] flex gap-5 justify-center bg-white border border-gray-300 rounded-full px-8 py-3 shadow-sm">
         {
           navLinks.map((link) => (
-            <li key={link.id}>
+            <li key={link.id} onClick={() => onSelect(link.id)}>
               <Href href={`#${link.id}`} className={active === link.id ? "text-sky-500 font-bold" : ""}>
                 {
                   capitalize(link.label)

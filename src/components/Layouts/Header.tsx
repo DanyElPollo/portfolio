@@ -44,7 +44,7 @@ export default function Header({ className }: Props) {
 
   return (<>
     <header className={`p-4 min-w-full ${className}`}>
-      <Navbar links={sections} active={sect} />
+      <Navbar links={sections} active={sect} onSelect={handleSelect} />
     </header>
     <Translation />
     <BtnDown onClick={handleClick} />
