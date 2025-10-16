@@ -25,11 +25,11 @@ const SkillsIcon = ({ className }: { className: string }) => {
   const { t } = useTranslation('skills')
   const base = `text-3xl transition ${className}`;
 
-  const styleCard = "flex flex-col text-center min-w-60 w-64 sm:w-68 md:w-72 lg:max-h-48 lg:w-96 max-w-96 h-56 mx-auto p-4 border-2 border-gray-300 bg-sky-900 rounded-2xl transition-transform hover:scale-110 justify-start"
+  const styleCard = "flex flex-col text-center min-w-60 w-64 sm:w-68  lg:max-h-48 lg:w-96 max-w-96 h-56 mx-auto p-4 border-2 border-gray-300 bg-sky-900 rounded-2xl transition-transform hover:scale-110 justify-start"
 
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-around mt-5 md:py-4 xl:px-24 2xl:px-48  ">
+    <section className="grid grid-cols-1 sm:grid-cols-2 gap-5 justify-around mt-5 md:py-4 xl:px-20">
       {/* Lenguajes */}
       <CardBase title={t('language')} id={1} className={styleCard}>
         <DivWrapper>
