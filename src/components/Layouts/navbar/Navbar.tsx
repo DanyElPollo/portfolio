@@ -1,5 +1,4 @@
 import Href from "@components/href/Href";
-import { useEffect } from "react";
 
 type Section = {
   id: string;
